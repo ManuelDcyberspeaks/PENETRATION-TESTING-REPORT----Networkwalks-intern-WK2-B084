@@ -1,5 +1,18 @@
-# PENETRATION-TESTING-REPORT----Networkwalks-intern-WK2-B084
-FOOTPRINTING,RECONNAISSANCE AND NETWORK SCANNING
+<div align="center">
+
+# 🛡️ PENETRATION TESTING REPORT
+
+### 🔎 FOOTPRINTING, RECONNAISSANCE & NETWORK SCANNING STAGES
+
+
+
+
+<img src="https://img.shields.io/badge/CYBERSECURITY-NETWORKWALKS-0A66C2?style=for-the-badge&logo=hackthebox&logoColor=white" />
+<img src="https://img.shields.io/badge/WEEK%202-B084-6F42C1?style=for-the-badge" />
+<img src="https://img.shields.io/badge/PERMITTED-YES-22C55E?style=for-the-badge" />
+
+
+
 PENETRATION TESTING REPORT
 FOOTPRINTING & NETWORK SCANNING PHASES
 W2-PM-FINAL | CYBERSECURITY |  NETWORKWALKS
