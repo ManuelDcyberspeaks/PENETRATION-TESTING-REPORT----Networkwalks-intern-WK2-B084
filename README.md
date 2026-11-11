@@ -161,31 +161,23 @@ Note: When finalizing the report, the subnet range, number of hosts, and address
 
 
 
-# ⚠️ 5. Risk Analysis / Impact
+##  ⚠️ 5. Risk Analysis / Impact
 
 
 Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
 
 
+| # | 🔎RISK Finding                        |📊 Evidence / Observation                                      |⚠️ Potential Impact                                                                 | 🔴🟠🟢Severity |
+|---|--------------------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------|----------|
+| 1 | Exposure of Web Technologies   | WhatWeb identified WordPress and WP Download Manager versions | Attackers may leverage version details to locate known vulnerabilities or outdated components | 🟠 Medium |
+| 2 | Server IP Address Disclosure   | Nslookup resolved the domain to `192.232.216.135`           | Provides adversaries with direct knowledge of the network location hosting the service | 🟢 Low |
+| 3 | HTTP Header Information Visible| Curl output displayed response headers and exposed `/wp-json/` endpoint | Assists in fingerprinting the application and may enable further enumeration | 🟢 Low |
+| 4 | WAF Technology Identified      | Wafw00f detected ModSecurity (SpiderLabs)                   | Reveals details about the site’s defensive setup, potentially guiding bypass attempts | 🟢 Low |
+| 5 | DNS Records Enumerated         | DNSRecon listed name servers, mail servers, SPF/TXT, and service records | Provides a broader infrastructure profile that could aid in mapping and targeted attacks | 🟠 Medium |
+| 6 | Active Hosts Detected          | Zenmap scan revealed four live hosts within the subnet      | Presence of unknown or unauthorized devices may introduce internal security risks | 🟠 Medium |
 
 
 	
-| # | **🔎RISK Finding** | **📊Evidence / Observation** | **⚠️Potential Impact** | **🔴🟠🟢Severity** |
-
-| ---: | --- | --- | --- | --- |
-
-
-| 1 | Exposure of Web Technologies | WhatWeb identified WordPress and WP Download Manager versions in use | Attackers may leverage version details to locate known vulnerabilities or outdated components | 🟠 **Medium** |
-
-| 2 | Server IP Address Disclosure | Nslookup resolved the domain to ``192.232.216.135`` | Provides adversaries with direct knowledge of the network location hosting the service | 🟢**Low** |
-
-| 3 | HTTP Header Information Visible | Curl output displayed response headers and exposed the ``/wp-json/`` endpoint | Assists in fingerprinting the application and may enable further enumeration | 🟢**Low** |
-
-| 4 | WAF Technology Identified | Wafw00f detected ModSecurity (SpiderLabs) | Reveals details about the site’s defensive setup, potentially guiding attackers in bypass attempts | 🟢 **Low** |
-
-| 5 | DNS Records Enumerated | DNSRecon listed name servers, mail servers, SPF/TXT, and service records | Provides a broader infrastructure profile that could aid in mapping and targeted attacks | 🟠 **Medium** |
-
-| 6 | Active Hosts Detected on Local Network | Zenmap scan revealed four live hosts within the subnet | Presence of unknown or unauthorized devices may introduce internal security risks |🟠 **Medium** |
 
 
 
@@ -479,16 +471,6 @@ Ethics and authorization are essential: all reconnaissance and scanning must be 
 
 
 
-## 🔎 Security Observations & Risk Ratings
-
-| # | Finding                        | Evidence / Observation                                      | Potential Impact                                                                 | Severity |
-|---|--------------------------------|-------------------------------------------------------------|----------------------------------------------------------------------------------|----------|
-| 1 | Exposure of Web Technologies   | WhatWeb identified WordPress and WP Download Manager versions | Attackers may leverage version details to locate known vulnerabilities or outdated components | 🟠 Medium |
-| 2 | Server IP Address Disclosure   | Nslookup resolved the domain to `192.232.216.135`           | Provides adversaries with direct knowledge of the network location hosting the service | 🟢 Low |
-| 3 | HTTP Header Information Visible| Curl output displayed response headers and exposed `/wp-json/` endpoint | Assists in fingerprinting the application and may enable further enumeration | 🟢 Low |
-| 4 | WAF Technology Identified      | Wafw00f detected ModSecurity (SpiderLabs)                   | Reveals details about the site’s defensive setup, potentially guiding bypass attempts | 🟢 Low |
-| 5 | DNS Records Enumerated         | DNSRecon listed name servers, mail servers, SPF/TXT, and service records | Provides a broader infrastructure profile that could aid in mapping and targeted attacks | 🟠 Medium |
-| 6 | Active Hosts Detected          | Zenmap scan revealed four live hosts within the subnet      | Presence of unknown or unauthorized devices may introduce internal security risks | 🟠 Medium |
 
 
 
