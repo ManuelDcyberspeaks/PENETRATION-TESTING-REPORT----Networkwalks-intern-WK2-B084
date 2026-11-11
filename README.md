@@ -20,6 +20,8 @@
 **W2-PM-FINAL | CYBERSECURITY |  NETWORKWALKS**
 
 
+
+
 ## 🛡️ WORK HIGHLIGHTS
 
 
@@ -44,7 +46,9 @@
 # 1. Liability Disclaimer
 
 
+
 > **PERMISSION MANAGEMENT ACCESS ONLY**
+> 
 
 
 **I have carried out security testing activities only on systems and devices that I personally own or for which I have obtained explicit, written authorization. All demonstrations, notes, and materials provided here are intended solely for educational and research purposes**.
@@ -55,12 +59,17 @@ Nothing in this project should be used to engage in unlawful activity. The autho
 By engaging with this material, you acknowledge these risks and agree to act responsibly, ethically, and within the boundaries of the law.**
 
 
+
+
 > 🛡️ **Security principle:** Endeavor to respect and define the authorized policies before starting reconnaissance or security testing.
 
 
 
 
 # 🛡️ 2. Introduction
+
+
+
 
 **Cybersecurity is a discipline built on understanding how attackers think, and penetration testing provides a safe, controlled environment to explore those methods. In the week 2 of my internship at Networkwalks, I focused on two important parts of the penetration testing process: footprinting and scanning.**
 
@@ -77,7 +86,11 @@ These two steps show how an attacker might move from gathering information about
 
 # 🛡️ 3. Tools Used
 
+
+
 **The table below lists each tool used in this report and its purpose.**
+
+
 
 | **Tool 	| **Purpose** |
 | ----|----|
@@ -93,7 +106,10 @@ These two steps show how an attacker might move from gathering information about
 
 -----
 
+
+
 # 🛡️ 4. Activities Performed
+
 ## 🔍 4.1 Footprinting & Reconnaissance
 
 
@@ -113,6 +129,8 @@ During this phase, I performed reconnaissance against the networkwalks.com domai
 *DNSRecon Employed to enumerate DNS records. The results included information about name servers, mail servers, SPF/TXT records, service records, and DNS software details.*
 
 -------
+
+
 
 # 4.2 Network Scanning with Zenmap
 
@@ -149,19 +167,20 @@ Note: When finalizing the report, the subnet range, number of hosts, and address
 Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
 
 
-	| # | 🔎 Risk/Finding | 📊 Evidence/Observation |	⚠️ Potential Impact |	🔴🟠🟢 Risk Level |
-	
-	|---:|---|---|---|---|
 
 
 	
-| 1 |	Exposure of web technologies	| WhatWeb revealed WordPress and WP Download Manager | versions in use	Attackers could leverage version details to search for known vulnerabilities or outdated components |	🟠 **Medium** |
-| 2 |	Server IP address disclosed |	Nslookup resolved the domain to `192.232.216.135`	| Provides adversaries with direct knowledge of the network location hosting the service |	🟢 **Low** |
-| 3	| HTTP header information visible |	Curl output displayed response headers and exposed the`/wp-json/`  | endpoint	Assists in fingerprinting the application and may enable further enumeration |	🟢 **Low** |
-| 4 |	WAF technology identified |	Wafw00f detected ModSecurity (SpiderLab) |Reveals details about the site’s defensive setup, which could guide attackers in tailoring bypass attempts |	🟢 **Low** |
-| 5	| DNS records enumerated |	DNSRecon listed name servers, mail servers, SPF/TXT, and service records |	Offers a broader view of the infrastructure, potentially aiding in mapping and targeted attacks |	🟠 **Medium** |
-| 6 |	Active hosts detected on local network	| Zenmap scan showed four live hosts in the example subnet |	Presence of unknown or unauthorized devices could pose internal security risks |	🟠 **Medium** |
+| # | **🔎RISK Finding** | **📊Evidence / Observation** | **⚠️Potential Impact** | **🔴🟠🟢Severity** |
 
+| --- | --- | --- | --- | --- |
+
+
+| 1 | Exposure of Web Technologies | WhatWeb identified WordPress and WP Download Manager versions in use | Attackers may leverage version details to locate known vulnerabilities or outdated components | 🟠 Medium |
+| 2 | Server IP Address Disclosure | Nslookup resolved the domain to ``192.232.216.135`` | Provides adversaries with direct knowledge of the network location hosting the service | 🟢 Low |
+| 3 | HTTP Header Information Visible | Curl output displayed response headers and exposed the ``/wp-json/`` endpoint | Assists in fingerprinting the application and may enable further enumeration | 🟢 Low |
+| 4 | WAF Technology Identified | Wafw00f detected ModSecurity (SpiderLabs) | Reveals details about the site’s defensive setup, potentially guiding attackers in bypass attempts | 🟢 Low |
+| 5 | DNS Records Enumerated | DNSRecon listed name servers, mail servers, SPF/TXT, and service records | Provides a broader infrastructure profile that could aid in mapping and targeted attacks | 🟠 Medium |
+| 6 | Active Hosts Detected on Local Network | Zenmap scan revealed four live hosts within the subnet | Presence of unknown or unauthorized devices may introduce internal security risks | 🟠 Medium |
 
 
 
@@ -181,6 +200,8 @@ As a result, details such as software versions, IP addresses, or DNS records sho
 
 ------
 
+
+
 # 🛡️ 6. Recommendations
 
 Based on the observations from these activities, I recommend the following security improvements:
@@ -191,40 +212,52 @@ Based on the observations from these activities, I recommend the following secur
 Regularly evaluate what information about web technologies, CMS platforms, and plugins is visible externally to reduce unnecessary exposure.
 
 
+
 ### 2️⃣ Maintain Up to Date Software
 
 Ensure CMS platforms, plugins, and supporting technologies are consistently updated and checked against current security advisories.
+
 
 
 ### 3️⃣ Harden HTTP Response Headers
 
 Review and adjust HTTP headers to minimize disclosure of technical details that could aid attackers in reconnaissance.
 
+
 ### 4️⃣ Audit DNS Records Periodically
 
 Conduct routine checks of DNS records to confirm that only essential information and services are publicly accessible.
+
 
 ### 5️⃣ Optimize and Monitor WAF Configuration 
 
 Keep the Web Application Firewall (ModSecurity) active, properly tuned, and continuously monitored to strengthen protection against common attacks.
 
+
 ### 6️⃣ Conduct Internal Network Discovery
 
 Perform scheduled scans of internal networks to identify active devices and maintain visibility of the environment.
+
 
 ### 7️⃣ Investigate Unrecognized Devices 
 
 Any unexpected or unauthorized device detected during scanning should be promptly investigated and validated.
 
+
 ### 8️⃣ Maintain Accurate Network Documentation
 
 Keep network topology diagrams and device inventories updated to support effective monitoring and incident response.
+
 
 ### 9️⃣ Ensure Authorized Security Testing
 
 Reconnaissance and scanning activities must only be performed on systems and networks where explicit authorization has been granted.
 
+
 ------
+
+
+
 
 # 🛡️ 7. Security Analysis Stages
 
@@ -400,6 +433,8 @@ Ethics and authorization are essential: all reconnaissance and scanning must be 
 </div>
 
 -----
+
+
 
 # 🛡️ Project Overview
 
